@@ -1,5 +1,7 @@
 /* Color palette */
 :root {
+  color-scheme: light;
+
   /* Primary colors */
   --primary: #1a237e;
   --primary-light: #534bae;
@@ -32,6 +34,27 @@
   --info-light: #d1ecf1;
 }
 
+body.dark-mode {
+  color-scheme: dark;
+  --primary: #9fa8da;
+  --primary-light: #c5cae9;
+  --primary-dark: #7986cb;
+  --primary-text: #121212;
+  --secondary: #ff9e40;
+  --secondary-dark: #e65100;
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b0b0b0;
+  --border: #444444;
+  --border-light: #333333;
+  --border-focus: #666666;
+  --success: #81c784;
+  --warning: #ffb74d;
+  --error: #ef9a9a;
+  --info: #80deea;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,6 +71,11 @@ body {
   padding: 12px;
   background-color: var(--background);
   font-size: 0.9rem;
+}
+
+input {
+  background-color: var(--surface);
+  color: var(--text-primary);
 }
 
 header {
@@ -289,7 +317,7 @@ section h3 {
 
 button {
   background-color: var(--primary);
-  color: white;
+  color: var(--primary-text);
   border: none;
   padding: 6px 12px;
   font-size: 0.85rem;
@@ -505,7 +533,7 @@ footer {
   height: 100%; /* Make button match input height */
   min-height: 32px; /* Ensure minimum clickable area */
   background: var(--primary);
-  color: white;
+  color: var(--primary-text);
   border: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
@@ -565,7 +593,7 @@ footer {
 .day-filter.active,
 .time-filter.active {
   background-color: var(--primary);
-  color: white;
+  color: var(--primary-text);
   border-color: var(--primary-dark);
 }
 
@@ -574,7 +602,7 @@ footer {
 .day-filter:hover,
 .time-filter:hover {
   background-color: var(--primary-light);
-  color: white;
+  color: var(--primary-text);
 }
 
 .time-filters {
@@ -621,6 +649,9 @@ footer {
   position: absolute;
   top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #user-status {
