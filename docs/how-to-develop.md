@@ -37,6 +37,13 @@ These dependencies will be installed when you run `pip install -r src/requiremen
 - FastAPI's auto-reload feature will automatically restart the server when you make code changes
 - Use the interactive API documentation at `/docs` to test your endpoints
 
+### Sharing checks
+
+With Node.js installed, run `node --test tests/sharing.test.js` from the repository
+root. These checks cover sharing links, clipboard success and fallback, and
+finding the activity when someone opens a shared link. They do not require the
+Python server or database.
+
 ## Usage
 
 ### Running the application
